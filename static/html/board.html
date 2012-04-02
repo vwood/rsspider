@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block nav %}
+{% if offset > 0 %}
+<a href="/board?offset={{ offset|add:"-10" }}">prev</a>
+{% endif %}
+{{ offset }}
+{% if threads|length == 10 %}
+<a href="/board?offset={{ offset|add:"10" }}">next</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="title">
+  <h2>{{ board.name }}</h2>
+  <p>{{ board.description }}</p>
+</div>
+{% if threads|length > 0 %}
+<div class="itemlist">
+  {% for thread in threads %}
+  <div class="item">
+	<p class="author">by <strong>{{ thread.author }}</strong></p>
+	<h3><a href="/thread?name={{ thread.link }}">{{ thread.title }}</a></h3>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+<div class="createwrap">
+  <div class="create">
+	<form action="/create_thread" method="post">
+	  <div><textarea name="title" rows="1" cols="60" onFocus="this.value=''; return false">title</textarea></div>
+	  <div><input type="submit" value="New Thread"></div>
+	  <input type="hidden" name="board_name" value="{{ board.link }}">
+	</form>
+  </div>
+</div>
+{% endblock %}
