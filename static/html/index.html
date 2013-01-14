@@ -5,18 +5,17 @@
 <a href="/index?offset={{ offset|add:"-10" }}">prev</a>
 {% endif %}
 {{ offset }}
-{% if boards|length == 10 %}
-<a href="/index?offset={{ offset|add:"10" }}">next</a>
+{% if links|length == 40 %}
+<a href="/index?offset={{ offset|add:"40" }}">next</a>
 {% endif %}
 {% endblock %}
 
 {% block content %}
-{% if boards|length > 0 %}
+{% if has_more %}
 <div class="itemlist">
-  {% for board in boards %}
+  {% for link in links %}
   <div class="item">
-	<div><a href="board?name={{ board.link }}"><h2>{{ board.name }}</h2></a></div>
-	<div>{{ board.description }}</div>
+	<div><a href="{{ link.link }}"><h2>{{ link.description }}</h2></a></div>
   </div>
   {% endfor %}
 </div>
@@ -24,9 +23,9 @@
 <div class="createwrap">
   <div class="create">
 	<form action="/create_board" method="post">
-	  <div><textarea name="name" rows="1" cols="30" onFocus="this.value=''; return false">title</textarea></div>
+	  <div><textarea name="link" rows="1" cols="30" onFocus="this.value=''; return false">link</textarea></div>
 	  <div>
-		<textarea name="content" rows="3" cols="60" onFocus="this.value=''; return false">description</textarea>
+		<textarea name="description" rows="3" cols="60" onFocus="this.value=''; return false">description</textarea>
 	  </div>
 	  <div><input type="submit" value="Create Board"></div>
 	</form>
