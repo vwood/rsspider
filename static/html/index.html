@@ -5,13 +5,13 @@
 <a href="/index?offset={{ offset|add:"-10" }}">prev</a>
 {% endif %}
 {{ offset }}
-{% if links|length == 40 %}
+{% if has_more %}
 <a href="/index?offset={{ offset|add:"40" }}">next</a>
 {% endif %}
 {% endblock %}
 
 {% block content %}
-{% if has_more %}
+{% if link %}
 <div class="itemlist">
   {% for link in links %}
   <div class="item">

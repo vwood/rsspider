@@ -1,7 +1,7 @@
 body {
 	font-family: sans-serif;
 	color: #000;
-	background-color: #002;
+	background-color: #ccf;
 }
 
 a, h2 {
@@ -9,7 +9,7 @@ a, h2 {
 }
 
 h1 {
-	color: #000;
+	color: #fff;
 }
 
 h1, h2 {
@@ -26,7 +26,7 @@ h1, h2 {
 }
 
 .topmatter {
-	background-color: #aac;
+	background-color: #335;
 	padding: 10px;
 	margin: 10px;
 }

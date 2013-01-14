@@ -57,13 +57,13 @@ class LinkIndex(RequestBase):
         except:
             offset = 0
 
-        link_query = db.GqlQuery("SELECT * FROM Board")
+        link_query = db.GqlQuery("SELECT * FROM Link")
         links = link_query.fetch(ITEMS_PER_PAGE, max(offset, 0))
-         has_more = link_query.count() > ITEMS_PER_PAGE + offset 
+        has_more = link_query.count() > ITEMS_PER_PAGE + offset 
         
         values = {'links': links,
                   'user_login': user_login(self.request.url),
-                  'offset': offset
+                  'offset': offset,
                   'has_more': has_more}
 
         path = os.path.join(os.path.dirname(__file__), 'static/html/index.html')
@@ -72,7 +72,7 @@ class LinkIndex(RequestBase):
 application = webapp.WSGIApplication(
     [('/', LinkIndex),
      ('/index', LinkIndex),
-     ('/create_link', CreateBoard)])
+     ('/create_link', CreateLink)])
 
 def main():
     run_wsgi_app(application)
