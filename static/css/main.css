@@ -26,7 +26,7 @@ h1, h2 {
 }
 
 .topmatter {
-	background-color: #335;
+	background-color: #002;
 	padding: 10px;
 	margin: 10px;
 }
@@ -38,6 +38,7 @@ h1, h2 {
 }
 
 .nav {
+	color: #fff;
 }
 
 .login {
@@ -53,7 +54,7 @@ h1, h2 {
 }
 
 .content {
-	background-color: #335;
+	background-color: #002;
 	padding: 10px;
 	margin: 10px;
 }

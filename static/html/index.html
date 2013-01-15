@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-{% if link %}
+{% if links %}
 <div class="itemlist">
   {% for link in links %}
   <div class="item">
@@ -22,12 +22,12 @@
 {% endif %}
 <div class="createwrap">
   <div class="create">
-	<form action="/create_board" method="post">
+	<form action="/create_link" method="post">
 	  <div><textarea name="link" rows="1" cols="30" onFocus="this.value=''; return false">link</textarea></div>
 	  <div>
 		<textarea name="description" rows="3" cols="60" onFocus="this.value=''; return false">description</textarea>
 	  </div>
-	  <div><input type="submit" value="Create Board"></div>
+	  <div><input type="submit" value="Create Link"></div>
 	</form>
   </div>
 </div>
