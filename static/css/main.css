@@ -1,7 +1,7 @@
 body {
 	font-family: sans-serif;
 	color: #000;
-	background-color: #ccf;
+	background-color: #78dcff;
 }
 
 a, h2 {
@@ -26,7 +26,7 @@ h1, h2 {
 }
 
 .topmatter {
-	background-color: #002;
+	background-color: #000050;
 	padding: 10px;
 	margin: 10px;
 }
@@ -54,7 +54,7 @@ h1, h2 {
 }
 
 .content {
-	background-color: #002;
+	background-color: #78dcff;
 	padding: 10px;
 	margin: 10px;
 }
@@ -62,7 +62,7 @@ h1, h2 {
 .itemlist {
 	padding: 1px;
 	margin: 5px;
-	background-color: #002;
+	background-color: #2864C8;
 }
 
 .item {
@@ -80,7 +80,7 @@ h1, h2 {
 	padding: 5px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #aac;
+	background-color: #2864C8;
 }
 
 .author {
