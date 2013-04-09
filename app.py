@@ -53,7 +53,7 @@ class CreateLink(RequestBase):
 class LinkIndex(RequestBase):
     def get(self):
         try:
-            offset = int(self.request.get('offset'))
+            offset = max(0, int(self.request.get('offset')))
         except:
             offset = 0
 
